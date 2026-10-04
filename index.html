@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
@@ -12,49 +12,188 @@
 
 <body>
 
-<nav>
-    <ul>
-        <li><a href="#specialties">Спеціальності</a></li>
-        <li><a href="#science">Наука</a></li>
-        <li><a href="#news">Новини</a></li>
-        <li><a href="#contact">Контакти</a></li>
-    </ul>
-</nav>
+<!-- Верхній колонтитул сайту -->
+<header>
+    <a href="#" class="logo">
+        <img src="images/logo.svg" alt="Логотип кафедри ІКТ" title="Кафедра ІКТ №504">
+    </a>
 
-<h1>Створюй майбутнє. Тут і зараз!</h1>
-<p>
-    Вибери не просто освіту - обери шлях до свого технологічного майбутнього!<br>
-    Кафедра ІКТ ХАІ - це місце, де ідеї стають реальністю, а знання відкривають двері до кар’єри мрії.<br>
-    Почни свій шлях вже сьогодні!
-</p>
-<h2 id="specialties">Наші спеціальності</h2>
-<p>
-    Ми спеціалізуємось на підготовці фахівців в області мережевих,
-    програмних та інформаційних технологій за двома напрямками: <br>
-    - G5 Електроніка, електронні комунікації, приладобудування та радіотехніка;<br>
-    - F6 Інформаційні системи та технології.
-</p>
-<h2>Якщо в числах</h2>
-<h2 id="science">Наука та інновації</h2>
-<p>Від аудиторії — до реального проєкту.</p>
-<p>
-    Наші студенти не просто вивчають теорію — вони беруть участь у реальних проєктах, розробляють ІТ-рішення,
-    створюють стартапи та співпрацюють з компаніями-партнерами. На кафедрі діють наукові гуртки, лабораторії та
-    ініціативи, де кожен може реалізувати себе ще під час навчання.
-    Дослідження, що перетворюються на продукт — саме тут це можливо.
-</p>
-<h2>Нам довіряють</h2>
-<h2 id="contact">Контакти</h2>
-<p>61070, Харківська область, Харків, вул. Вадима Манька, 17 <br>
-    НАУ "ХАІ"<br>
-    Кафедра інформаційно-комунікаційних технологій №504</p>
-<p>
-    <a href="mailto:k504@khai.edu">k504@khai.edu</a></p>
-<p>
-    <a href="tel:+380995025775">+38 (099) 502-57-75</a>
-</p>
+    <nav>
+        <ul>
+            <li><a href="#specialties">Спеціальності</a></li>
+            <li><a href="#science">Наука</a></li>
+            <li><a href="#news">Новини</a></li>
+            <li><a href="#contact">Контакти</a></li>
+        </ul>
+    </nav>
 
-<h2 id="news">Новини</h2>
+    <div class="header-actions">
+        <a href="#" class="search-btn" title="Пошук по сайту">🔍</a>
+        <div class="lang-switch">
+            <span>UA</span> | <a href="#">EN</a>
+        </div>
+    </div>
+</header>
 
+<!-- Основна частина сторінки -->
+<main>
+
+    <!-- Банер сайту -->
+    <section id="banner">
+        <div class="banner-content">
+            <h1>Створюй майбутнє. Тут і зараз!</h1>
+            <p>
+                Вибери не просто освіту - обери шлях до свого технологічного майбутнього!<br>
+                Кафедра ІКТ ХАІ - це місце, де ідеї стають реальністю, а знання відкривають двері до кар’єри мрії.<br>
+                Почни свій шлях вже сьогодні!
+            </p>
+            <button type="button">ХОЧУ ПОСТУПИТИ</button>
+        </div>
+        <div class="banner-media">
+            <img src="images/banner-student.png" alt="Студент кафедри ІКТ" title="Створюй майбутнє разом з ІКТ">
+        </div>
+    </section>
+
+    <!-- Розділ "Наші спеціальності" -->
+    <section id="specialties">
+        <h2>Наші спеціальності</h2>
+        <p>
+            Ми спеціалізуємось на підготовці фахівців в області мережевих,
+            програмних та інформаційних технологій за двома напрямками: <br>
+            - G5 Електроніка, електронні комунікації, приладобудування та радіотехніка;<br>
+            - F6 Інформаційні системи та технології.
+    </section>
+
+    <!-- Розділ "Якщо в числах" -->
+    <section id="stats">
+        <img src="images/stats.svg" alt="Кафедра ІКТ у числах" title="Статистика кафедри ІКТ">
+    </section>
+
+    <!-- Розділ з відгуками випускників -->
+    <section id="reviews">
+        <h2>#DICTExperience</h2>
+        <div class="reviews-carousel">
+            <article class="review-card">
+                <blockquote>"Office ipsum you must be muted. Meat t-shaped finish sexy last info. Malik offers a comprehensive understanding of the issue..."</blockquote>
+                <p><strong>Firstname Lastname</strong></p>
+                <small>Position title, Company name</small>
+            </article>
+        </div>
+
+        <!-- Аудіоелемент з керуванням відтворенням -->
+        <div class="audio-feedback">
+            <p>Аудіовідгук випускника кафедри:</p>
+            <audio controls>
+                <source src="media/audio-review.mp3" type="audio/mpeg">
+                <!-- Не знайшла реальні аудіовідгуки.-->
+            </audio>
+        </div>
+    </section>
+
+    <!-- Розділ "Наука та інновації" -->
+    <section id="science">
+        <div class="science-content">
+            <h2>Наука та інновації</h2>
+            <p>Від аудиторії — до реального проєкту.</p>
+            <p>
+                Наші студенти не просто вивчають теорію — вони беруть участь у реальних проєктах, розробляють ІТ-рішення,
+                створюють стартапи та співпрацюють з компаніями-партнерами. На кафедрі діють наукові гуртки, лабораторії та
+                ініціативи, де кожен може реалізувати себе ще під час навчання.
+                Дослідження, що перетворюються на продукт — саме тут це можливо.
+            </p>
+            <button type="button">ДІЗНАТИСЬ БІЛЬШЕ</button>
+        </div>
+        <div class="science-media">
+            <img src="images/science-dashboard.svg" alt="Панель аналітики та науки" title="Наука та інновації в ІКТ">
+        </div>
+    </section>
+
+    <!-- Розділ "Нам довіряють" -->
+    <section id="partners">
+        <h2>Нам довіряють</h2>
+        <div class="partners-logos">
+            <img src="images/nix.png" alt="Логотип NIX" title="Компанія NIX">
+            <img src="images/sigma.png" alt="Логотип Sigma Software" title="Компанія Sigma Software">
+            <img src="images/globallogic.png" alt="Логотип GlobalLogic" title="Компанія GlobalLogic">
+            <img src="images/epam.png" alt="Логотип EPAM" title="Компанія EPAM">
+            <img src="images/softserve.png" alt="Логотип SoftServe" title="Компанія SoftServe">
+            <img src="images/dataart.png" alt="Логотип DataArt" title="Компанія DataArt">
+        </div>
+    </section>
+
+    <!-- Розділ "Контакти" -->
+    <section id="contact">
+        <h2>Контакти</h2>
+        <p>61070, Харківська область, Харків, вул. Вадима Манька, 17 <br>
+            НАУ "ХАІ"<br>
+            Кафедра інформаційно-комунікаційних технологій №504</p>
+
+        <div class="contacts-grid">
+            <div class="contact-col">
+                <p>Телефон</p>
+                <p><a href="tel:+380577884352">(057)-788-43-52</a></p>
+                <p><a href="tel:+380995025775">+38 (099) 502-57-75</a></p>
+                <small>В будні дні з 9:00 до 17:00</small>
+            </div>
+            <div class="contact-col">
+                <p>Social</p>
+                <p>
+                    <a href="#">Telegram</a> | <a href="#">Viber</a> | <a href="#">Facebook</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
+                </p>
+            </div>
+            <div class="contact-col">
+                <p>Пошта</p>
+                <p><a href="mailto:telecom.xai@gmail.com">telecom.xai@gmail.com</a></p>
+                <p><a href="mailto:k504@khai.edu">k504@khai.edu</a></p>
+                <p><a href="mailto:PK@khai.edu">PK@khai.edu</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Розділ "Новини" -->
+    <section id="news">
+        <h2>Новини</h2>
+        <div class="news-list">
+            <article class="news-card">
+                <p>Office ipsum you must be muted. Meat t-shaped finish sexy last info.</p>
+                <time datetime="2026-01-07">07 Jan 2026</time>
+            </article>
+        </div>
+
+        <!-- Відео без елементів керування з автоматичним запуском -->
+        <div class="news-video">
+            <video autoplay muted loop playsinline width="400">
+                <source src="media/news-video.mp4" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+        </div>
+
+        <button type="button">БІЛЬШЕ НОВИН</button>
+    </section>
+
+</main>
+
+<!-- Нижній колонтитул сайту -->
+<footer>
+    <div class="footer-address">
+        <p>61070, Харківська область, Харків, вул. Вадима Манька, 17 <br>
+            НАУ ім. М.Є. Жуковського "ХАІ"<br>
+            Кафедра інформаційно-комунікаційних технологій №504</p>
+    </div>
+    <div class="footer-center">
+        <img src="images/logo.svg" alt="Логотип кафедри ІКТ" title="Кафедра ІКТ №504">
+        <p>&copy; 2026 All right reserved</p>
+        <div class="footer-socials">
+            <a href="#">Telegram</a> | <a href="#">Viber</a> | <a href="#">Facebook</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
+        </div>
+    </div>
+    <div class="footer-contacts">
+        <p><a href="tel:+380577884352">(057)-788-43-52</a></p>
+        <p><a href="tel:+380995025775">+38 (099) 502-57-75</a></p>
+        <p><a href="mailto:k504@khai.edu">k504@khai.edu</a></p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
