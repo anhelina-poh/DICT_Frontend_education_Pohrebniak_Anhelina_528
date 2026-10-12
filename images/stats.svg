@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="100%" height="auto">
+  <!-- Фон блока -->
+  <rect width="1000" height="240" rx="12" fill="#181818"/>
+
+  <!-- Заголовок блока -->
+  <text x="50" y="55" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="28">Якщо в числах</text>
+
+  <!-- Колонка 1: 18 Досвідчених викладачів -->
+  <g transform="translate(140, 110)">
+    <text x="0" y="35" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="52">18</text>
+    <text x="0" y="70" text-anchor="middle" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="16">Досвідчених</text>
+    <text x="0" y="92" text-anchor="middle" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="16">викладачів</text>
+  </g>
+
+  <!-- Разделитель 1 -->
+  <line x1="260" y1="120" x2="260" y2="205" stroke="#E53935" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Колонка 2: 65 Навчальних дисциплін -->
+  <g transform="translate(380, 110)">
+    <text x="0" y="35" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="52">65</text>
+    <text x="0" y="70" text-anchor="middle" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="16">Навчальних</text>
+    <text x="0" y="92" text-anchor="middle" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="16">дисциплін</text>
+  </g>
+
+  <!-- Разделитель 2 -->
+  <line x1="500" y1="120" x2="500" y2="205" stroke="#E53935" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Колонка 3: 1200+ Талановитих випускників -->
+  <g transform="translate(630, 110)">
+    <text x="0" y="35" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="52">1200+</text>
+    <text x="0" y="70" text-anchor="middle" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="16">Талановитих</text>
+    <text x="0" y="92" text-anchor="middle" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="16">випускників</text>
+  </g>
+
+  <!-- Разделитель 3 -->
+  <line x1="760" y1="120" x2="760" y2="205" stroke="#E53935" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Колонка 4: ∞ Унікального досвіду -->
+  <g transform="translate(870, 110)">
+    <text x="0" y="35" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="56">∞</text>
+    <text x="0" y="70" text-anchor="middle" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="16">Унікального</text>
+    <text x="0" y="92" text-anchor="middle" fill="#D1D5DB" font-family="Arial, sans-serif" font-size="16">досвіду</text>
+  </g>
+</svg>
