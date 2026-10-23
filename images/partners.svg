@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 170" width="100%" height="auto">
+  <!-- Фон блоку -->
+  <rect width="1100" height="170" rx="10" fill="#222222"/>
+
+  <!-- Заголовок розділу -->
+  <text x="50%" y="42" dominant-baseline="middle" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="22">Нам довіряють</text>
+
+  <!-- Блок логотипів -->
+  <g transform="translate(40, 75)" fill="#B0B0B0" font-family="Arial, sans-serif">
+    
+    <!-- nix -->
+    <g transform="translate(0, 5)">
+      <text x="0" y="32" font-size="34" font-weight="bold" letter-spacing="-1">nix</text>
+      <!-- Стилізований метелик/іконка NIX -->
+      <path d="M 68 18 C 74 10, 80 10, 80 20 C 80 30, 74 30, 68 22 Z" fill="#B0B0B0"/>
+      <path d="M 68 22 C 62 30, 56 30, 56 20 C 56 10, 62 10, 68 18 Z" fill="#B0B0B0"/>
+    </g>
+
+    <!-- sigma software -->
+    <g transform="translate(145, 8)">
+      <text x="0" y="24" font-size="24" font-weight="bold" letter-spacing="1">SIGMA</text>
+      <text x="2" y="37" font-size="9" letter-spacing="0.5">Software</text>
+    </g>
+
+    <!-- GlobalLogic -->
+    <g transform="translate(305, 7)">
+      <text x="0" y="24" font-size="24" font-weight="600">GlobalLogic</text>
+      <text x="1" y="37" font-size="8" letter-spacing="0.2">A Hitachi Group Company</text>
+    </g>
+
+    <!-- <epam> -->
+    <g transform="translate(525, 7)">
+      <text x="0" y="26" font-size="28" font-weight="bold">&lt;epam&gt;</text>
+    </g>
+
+    <!-- softserve -->
+    <g transform="translate(685, 8)">
+      <text x="0" y="25" font-size="25" font-weight="500">softserve</text>
+    </g>
+
+    <!-- DataArt -->
+    <g transform="translate(865, 5)">
+      <!-- Іконка орігамі/кристала DataArt -->
+      <polygon points="0,7 18,7 9,25" fill="#888888"/>
+      <polygon points="18,7 18,25 9,25" fill="#B0B0B0"/>
+      <polygon points="0,25 18,25 0,7" fill="#666666"/>
+      <text x="28" y="27" font-size="27" font-weight="bold">DataArt</text>
+    </g>
+
+  </g>
+</svg>
