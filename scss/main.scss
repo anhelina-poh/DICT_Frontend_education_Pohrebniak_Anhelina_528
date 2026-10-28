@@ -1,0 +1,17 @@
+// Змінні та абстракції
+@use "variables/breakpoints";
+@use "variables/colors";
+@use "variables/fonts";
+@use "variables/typography";
+@use "abstractions/mixins";
+
+// Базові стилі
+@use "base/general";
+@use "base/header";
+@use "base/footer";
+
+// Компоненти
+@use "components/feedbacks";
+@use "components/in-numbers";
+@use "components/news";
+@use "components/specialties";

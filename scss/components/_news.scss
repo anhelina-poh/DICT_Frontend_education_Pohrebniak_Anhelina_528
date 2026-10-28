@@ -1,0 +1,19 @@
+@use "../variables/colors" as *;
+
+#news {
+  .news-cards,
+  .news-list {
+    .news-card {
+      border-right: 1px solid $red;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      .content-wrapper,
+      .news-card-content {
+        padding: 10px;
+      }
+    }
+  }
+}
