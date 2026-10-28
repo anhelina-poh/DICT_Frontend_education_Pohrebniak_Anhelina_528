@@ -1,0 +1,45 @@
+@use "../variables/typography" as *;
+@use "../variables/colors" as *;
+
+footer {
+  padding: 45px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  .footer-col,
+  .footer-column {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.6;
+    color: #e2e8f0;
+    font-size: 15px;
+  }
+
+  .social-links,
+  .social {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+  }
+}

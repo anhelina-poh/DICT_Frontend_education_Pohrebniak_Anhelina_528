@@ -1,0 +1,11 @@
+@use "../abstractions/mixins" as *;
+
+#specialties {
+  .cards-wrapper,
+  .specialties-cards {
+    .card,
+    .specialty-card {
+      @include card;
+    }
+  }
+}
