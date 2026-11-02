@@ -1,0 +1,12 @@
+@use "../abstractions/mixins" as *;
+
+#feedbacks,
+#reviews {
+  .cards-wrapper,
+  .reviews-carousel {
+    .card,
+    .review-card {
+      @include card;
+    }
+  }
+}

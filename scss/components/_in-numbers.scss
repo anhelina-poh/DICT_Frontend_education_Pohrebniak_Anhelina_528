@@ -1,0 +1,33 @@
+@use "../variables/colors" as *;
+
+#in-numbers,
+#stats {
+  background: #18181b;
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin: 50px 0;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .cards-wrapper,
+  .stats-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card,
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 10px 20px;
+      border-right: 1px solid $red;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}

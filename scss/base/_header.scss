@@ -1,0 +1,107 @@
+@use "../variables/typography" as *;
+@use "../variables/colors" as *;
+
+header {
+  width: 100%;
+  padding: 24px 0;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 20px;
+  box-sizing: border-box;
+
+  .header-wrapper,
+  .container {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+  }
+
+
+  .logo {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0;
+
+    img {
+      height: 34px;
+      width: auto;
+      display: block;
+    }
+  }
+
+
+  nav {
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 1 auto;
+    justify-content: center;
+
+    ul {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-wrap: nowrap !important;
+      gap: 28px;
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+
+      li {
+        display: inline-block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: nowrap !important;
+
+        a {
+          color: #ffffff !important;
+          text-decoration: none !important;
+          font-size: 16px;
+          font-weight: 500;
+          white-space: nowrap !important;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: $red !important;
+          }
+        }
+      }
+    }
+  }
+
+
+  .lang-switcher,
+  .search-wrapper,
+  .header-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px;
+    flex-shrink: 0;
+    white-space: nowrap !important;
+
+    a {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      font-size: 15px;
+      font-weight: 600;
+
+      &:hover {
+        color: $red !important;
+      }
+    }
+
+    img,
+    svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+  }
+}
