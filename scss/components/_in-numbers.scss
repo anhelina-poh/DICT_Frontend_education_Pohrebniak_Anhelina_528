@@ -1,5 +1,6 @@
 @use "../variables/colors" as *;
 
+// Розділ "Якщо в числах"
 #in-numbers,
 #stats {
   background: #18181b;
@@ -23,11 +24,25 @@
       flex: 1;
       text-align: center;
       padding: 10px 20px;
-      border-right: 1px solid $red;
+      border-right: 1px solid var(--red-color);
 
       &:last-child {
         border-right: none;
       }
+
+      .stat-number {
+        font-size: 38px;
+        font-weight: 700;
+        color: var(--primary-text-color);
+        display: block;
+        margin-bottom: 8px;
+      }
     }
   }
+}
+
+// Якщо в числах: світла тема
+[data-theme="light"] #in-numbers,
+[data-theme="light"] #stats {
+  background: #f1f5f9;
 }

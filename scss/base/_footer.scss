@@ -1,6 +1,7 @@
 @use "../variables/typography" as *;
 @use "../variables/colors" as *;
 
+// Підвал сайту
 footer {
   padding: 45px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -21,8 +22,8 @@ footer {
   p {
     margin: 0;
     line-height: 1.6;
-    color: #e2e8f0;
-    font-size: 15px;
+    color: var(--primary-text-color);
+    font-size: 14px;
   }
 
   .social-links,
@@ -30,6 +31,15 @@ footer {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+
+    a {
+      color: var(--primary-text-color);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--red-color);
+      }
+    }
   }
 
   .logo {
@@ -41,5 +51,14 @@ footer {
       width: auto;
       display: block;
     }
+  }
+}
+
+// Підвал: світла тема
+[data-theme="light"] footer {
+  border-top-color: rgba(0, 0, 0, 0.1);
+
+  .logo img {
+    filter: invert(0.9) hue-rotate(180deg);
   }
 }
