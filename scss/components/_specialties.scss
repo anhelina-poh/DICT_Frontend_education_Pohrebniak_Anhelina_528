@@ -1,11 +1,28 @@
 @use "../abstractions/mixins" as *;
+@use "../variables/colors" as *;
 
+// Розділ "Спеціальності"
 #specialties {
-  .cards-wrapper,
   .specialties-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 25px;
+
     .card,
     .specialty-card {
       @include card;
+      background: transparent;
+
+      h3 {
+        margin: 0 0 10px 0;
+        font-size: 26px;
+      }
+
+      p {
+        margin: 0;
+        color: var(--primary-text-color);
+      }
     }
   }
 }

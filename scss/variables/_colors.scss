@@ -1,4 +1,27 @@
-$main-color: #f1f5f9;
-$secondary-color: #38bdf8;
-$grey: #475569;
-$red: #FF3A3A;
+// Палітра кольорів
+$primary: #1d1d1d;
+$grey: #7c7c7c;
+$primary-light: #f8f8f8;
+$red: #ff3b39;
+$red-hover: #ff1a18;
+$silver: #bfbfbf;
+
+// Темна тема
+:root {
+  --primary-color: #{$primary};
+  --primary-text-color: #{$primary-light};
+  --red-color: #{$red};
+  --red-hover-color: #{$red-hover};
+  --grey-color: #{$grey};
+  --silver-color: #{$silver};
+}
+
+// Світла тема
+[data-theme="light"] {
+  --primary-color: #{$primary-light};
+  --primary-text-color: #{$primary};
+  --red-color: #{$red};
+  --red-hover-color: #{$red-hover};
+  --grey-color: #{$grey};
+  --silver-color: #{$silver};
+}

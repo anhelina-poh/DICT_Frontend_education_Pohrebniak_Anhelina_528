@@ -1,10 +1,11 @@
 @use "../variables/colors" as *;
 
+// Розділ "Новини"
 #news {
   .news-cards,
   .news-list {
     .news-card {
-      border-right: 1px solid $red;
+      border-right: 1px solid var(--red-color);
 
       &:last-child {
         border-right: none;
