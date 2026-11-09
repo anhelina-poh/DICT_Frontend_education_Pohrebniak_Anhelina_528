@@ -1,8 +1,9 @@
 @use "../variables/typography" as *;
 @use "../variables/colors" as *;
 
+// Міксин картки
 @mixin card {
   padding: $base-padding;
   border-radius: 20px;
-  border: 1px solid $grey;
+  border: 1px solid var(--grey-color);
 }

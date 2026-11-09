@@ -8,108 +8,122 @@
   box-sizing: border-box;
 }
 
+// Тіло сторінки
 body {
-  font-family: $font-stack;
-  color: #e2e8f0;
-  background-color: #0b0b0c;
-  font-size: 17px;
-  line-height: 1.7;
-  max-width: 1200px;
+  background: var(--primary-color);
+  color: var(--primary-text-color);
+  font-family: $comfortaa;
+  max-width: $widedesk;
   margin: 0 auto;
   padding: 0 24px;
-}
-
-
-h1 {
-  font-size: 42px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 22px;
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: 30px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-top: 55px;
-  margin-bottom: 22px;
-}
-
-h3 {
-  font-size: 22px;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-p {
-  font-size: 16px;
-  color: #cbd5e1;
-  line-height: 1.75;
-  margin-bottom: 18px;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 section {
-  margin: 60px 0;
+  margin: 55px 0;
 }
 
-
-a,
-a:link,
-a:visited {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  transition: color 0.2s ease;
-}
-
-a:hover,
-a:focus {
-  color: $red !important;
-  text-decoration: underline !important;
-}
-
-
+// Кнопки сайту
+.button,
 button,
 input[type="submit"],
 .btn,
 a.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent !important;
+  background: var(--red-color);
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  width: fit-content;
+  padding: 10px 22px;
   border-radius: 6px;
-  padding: 10px 24px;
-  margin-top: 15px;
+  margin: 25px 0;
+  border: 1px solid var(--red-color);
+  font-family: $comfortaa;
+  font-weight: 700;
   font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;
+  display: inline-block;
   text-decoration: none !important;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
+  p {
+    margin: 0;
+  }
 
   &:hover {
-    border-color: $red !important;
-    color: $red !important;
-    background-color: rgba(255, 58, 58, 0.1) !important;
+    background: var(--red-hover-color);
+    border-color: var(--red-hover-color);
+    box-shadow: 0 4px 12px rgba(255, 59, 57, 0.25);
+    transform: translateY(-1px);
+  }
+
+  &:focus {
+    background: var(--primary-color);
   }
 }
 
-
+// Банер Hero
 .hero,
 section:first-of-type {
   img {
     display: block;
-    margin: 30px auto;
+    margin: 20px auto;
     max-width: 100%;
     height: auto;
   }
 }
 
+// Освітня програма: таблиця
+#curriculum {
+  table,
+  .curriculum-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0 35px 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-family: $comfortaa;
 
+    thead {
+      tr {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      th {
+        font-family: $comfortaa;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--primary-text-color);
+        padding: 14px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        text-align: left;
+
+        &:nth-child(2),
+        &:nth-child(4) {
+          width: 120px;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        td {
+          padding: 12px 18px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          font-size: 14px;
+          color: var(--primary-text-color);
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}
+
+// Наука та інновації
 #science,
 section:has(img[src*="science"]),
 section:has(img[src*="innovat"]) {
@@ -129,13 +143,12 @@ section:has(img[src*="innovat"]) {
     height: auto;
     border-radius: 16px;
     display: block;
+    transition: filter 0.25s ease;
   }
 }
 
-
-#admission,
-section:has(form),
-section:has(input[type="text"]) {
+// Вступ 2025: форма
+#admission {
   form {
     max-width: 600px;
     display: flex;
@@ -143,9 +156,9 @@ section:has(input[type="text"]) {
     gap: 16px;
 
     label {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 500;
-      color: #e2e8f0;
+      color: var(--primary-text-color);
       margin-bottom: -6px;
     }
 
@@ -155,22 +168,22 @@ section:has(input[type="text"]) {
     input[type="number"],
     textarea {
       width: 100%;
-      background: #18181b;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #242426;
+      border: 1px solid var(--grey-color);
       border-radius: 8px;
       padding: 12px 16px;
-      color: #ffffff;
-      font-size: 15px;
+      color: var(--primary-text-color);
+      font-size: 14px;
       font-family: inherit;
       outline: none;
       transition: border-color 0.2s ease;
 
       &:focus {
-        border-color: $red;
+        border-color: var(--red-color);
       }
 
       &::placeholder {
-        color: #71717a;
+        color: var(--silver-color);
       }
     }
 
@@ -178,11 +191,72 @@ section:has(input[type="text"]) {
       min-height: 100px;
       resize: vertical;
     }
+  }
+}
 
-    input[type="submit"],
-    button[type="submit"] {
-      align-self: flex-start;
-      margin-top: 10px;
+// Світла тема
+[data-theme="light"] {
+  // Кнопки
+  .button,
+  button,
+  input[type="submit"],
+  .btn,
+  a.btn {
+    background: #e63533 !important;
+    border-color: #e63533 !important;
+    color: #ffffff !important;
+
+    &:hover {
+      background: #cf2a28 !important;
+      border-color: #cf2a28 !important;
+      box-shadow: 0 4px 12px rgba(230, 53, 51, 0.25);
+    }
+  }
+
+  // Таблиця
+  #curriculum table,
+  #curriculum .curriculum-table {
+    border-color: rgba(0, 0, 0, 0.15);
+
+    thead tr {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    th, td {
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // Картка-дашборд "Наука та інновації"
+  #science .science-media img,
+  section:has(img[src*="science"]) img,
+  section:has(img[src*="innovat"]) img {
+    filter: invert(0.9) hue-rotate(180deg) contrast(1.05);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  // Поля введення
+  #admission form {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea {
+      background: #ffffff;
+      border-color: #d1d5db;
+    }
+  }
+
+  // Партнери
+  #partners,
+  .partners-wrapper {
+    background: #f1f3f5 !important;
+    border-radius: 16px;
+    padding: 24px;
+
+    img {
+      filter: invert(0.85);
     }
   }
 }

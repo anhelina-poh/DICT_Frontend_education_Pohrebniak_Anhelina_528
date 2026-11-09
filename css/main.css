@@ -1,3 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Geologica:wght@100..900&display=swap");
+:root {
+  --primary-color: #1d1d1d;
+  --primary-text-color: #f8f8f8;
+  --red-color: #ff3b39;
+  --red-hover-color: #ff1a18;
+  --grey-color: #7c7c7c;
+  --silver-color: #bfbfbf;
+}
+
+[data-theme=light] {
+  --primary-color: #f8f8f8;
+  --primary-text-color: #1d1d1d;
+  --red-color: #ff3b39;
+  --red-hover-color: #ff1a18;
+  --grey-color: #7c7c7c;
+  --silver-color: #bfbfbf;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Comfortaa", sans-serif;
+  color: var(--primary-text-color);
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.4;
+  font-weight: 700;
+  font-family: "Geologica", sans-serif;
+}
+
+h1, .h1 {
+  font-size: 38px;
+}
+
+h2, .h2 {
+  font-size: 32px;
+}
+
+h3, .h3 {
+  font-size: 28px;
+}
+
+h4, .h4 {
+  font-size: 24px;
+}
+
+h5, .h5 {
+  font-size: 18px;
+}
+
+h6, .h6 {
+  font-size: 16px;
+}
+
+.p, p {
+  font-size: 14px;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.small, small {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.scc_large-text,
+.large {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+a {
+  color: var(--red-color);
+  font-weight: 400;
+  text-decoration: underline;
+}
+a:active, a:hover, a:focus {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
 *,
 *::before,
 *::after {
@@ -5,100 +94,115 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #e2e8f0;
-  background-color: #0b0b0c;
-  font-size: 17px;
-  line-height: 1.7;
+  background: var(--primary-color);
+  color: var(--primary-text-color);
+  font-family: "Comfortaa", sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-}
-
-h1 {
-  font-size: 42px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 22px;
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: 30px;
-  font-weight: 700;
-  color: #ffffff;
-  margin-top: 55px;
-  margin-bottom: 22px;
-}
-
-h3 {
-  font-size: 22px;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-p {
-  font-size: 16px;
-  color: #cbd5e1;
-  line-height: 1.75;
-  margin-bottom: 18px;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 section {
-  margin: 60px 0;
+  margin: 55px 0;
 }
 
-a,
-a:link,
-a:visited {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  transition: color 0.2s ease;
-}
-
-a:hover,
-a:focus {
-  color: #FF3A3A !important;
-  text-decoration: underline !important;
-}
-
+.button,
 button,
 input[type=submit],
 .btn,
 a.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent !important;
+  background: var(--red-color);
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  width: fit-content;
+  padding: 10px 22px;
   border-radius: 6px;
-  padding: 10px 24px;
-  margin-top: 15px;
+  margin: 25px 0;
+  border: 1px solid var(--red-color);
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
   font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;
+  display: inline-block;
   text-decoration: none !important;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
+.button p,
+button p,
+input[type=submit] p,
+.btn p,
+a.btn p {
+  margin: 0;
+}
+.button:hover,
 button:hover,
 input[type=submit]:hover,
 .btn:hover,
 a.btn:hover {
-  border-color: #FF3A3A !important;
-  color: #FF3A3A !important;
-  background-color: rgba(255, 58, 58, 0.1) !important;
+  background: var(--red-hover-color);
+  border-color: var(--red-hover-color);
+  box-shadow: 0 4px 12px rgba(255, 59, 57, 0.25);
+  transform: translateY(-1px);
+}
+.button:focus,
+button:focus,
+input[type=submit]:focus,
+.btn:focus,
+a.btn:focus {
+  background: var(--primary-color);
 }
 
 .hero img,
 section:first-of-type img {
   display: block;
-  margin: 30px auto;
+  margin: 20px auto;
   max-width: 100%;
   height: auto;
+}
+
+#curriculum table,
+#curriculum .curriculum-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0 35px 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: "Comfortaa", sans-serif;
+}
+#curriculum table thead tr,
+#curriculum .curriculum-table thead tr {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+#curriculum table thead th,
+#curriculum .curriculum-table thead th {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--primary-text-color);
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: left;
+}
+#curriculum table thead th:nth-child(2), #curriculum table thead th:nth-child(4),
+#curriculum .curriculum-table thead th:nth-child(2),
+#curriculum .curriculum-table thead th:nth-child(4) {
+  width: 120px;
+}
+#curriculum table tbody tr,
+#curriculum .curriculum-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+#curriculum table tbody tr:hover,
+#curriculum .curriculum-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+#curriculum table tbody tr td,
+#curriculum .curriculum-table tbody tr td {
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 14px;
+  color: var(--primary-text-color);
+  line-height: 1.4;
 }
 
 #science,
@@ -123,46 +227,33 @@ section:has(img[src*=innovat]) img {
   height: auto;
   border-radius: 16px;
   display: block;
+  transition: filter 0.25s ease;
 }
 
-#admission form,
-section:has(form) form,
-section:has(input[type=text]) form {
+#admission form {
   max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-#admission form label,
-section:has(form) form label,
-section:has(input[type=text]) form label {
-  font-size: 15px;
+#admission form label {
+  font-size: 14px;
   font-weight: 500;
-  color: #e2e8f0;
+  color: var(--primary-text-color);
   margin-bottom: -6px;
 }
 #admission form input[type=text],
 #admission form input[type=email],
 #admission form input[type=tel],
 #admission form input[type=number],
-#admission form textarea,
-section:has(form) form input[type=text],
-section:has(form) form input[type=email],
-section:has(form) form input[type=tel],
-section:has(form) form input[type=number],
-section:has(form) form textarea,
-section:has(input[type=text]) form input[type=text],
-section:has(input[type=text]) form input[type=email],
-section:has(input[type=text]) form input[type=tel],
-section:has(input[type=text]) form input[type=number],
-section:has(input[type=text]) form textarea {
+#admission form textarea {
   width: 100%;
-  background: #18181b;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #242426;
+  border: 1px solid var(--grey-color);
   border-radius: 8px;
   padding: 12px 16px;
-  color: #ffffff;
-  font-size: 15px;
+  color: var(--primary-text-color);
+  font-size: 14px;
   font-family: inherit;
   outline: none;
   transition: border-color 0.2s ease;
@@ -171,61 +262,81 @@ section:has(input[type=text]) form textarea {
 #admission form input[type=email]:focus,
 #admission form input[type=tel]:focus,
 #admission form input[type=number]:focus,
-#admission form textarea:focus,
-section:has(form) form input[type=text]:focus,
-section:has(form) form input[type=email]:focus,
-section:has(form) form input[type=tel]:focus,
-section:has(form) form input[type=number]:focus,
-section:has(form) form textarea:focus,
-section:has(input[type=text]) form input[type=text]:focus,
-section:has(input[type=text]) form input[type=email]:focus,
-section:has(input[type=text]) form input[type=tel]:focus,
-section:has(input[type=text]) form input[type=number]:focus,
-section:has(input[type=text]) form textarea:focus {
-  border-color: #FF3A3A;
+#admission form textarea:focus {
+  border-color: var(--red-color);
 }
 #admission form input[type=text]::placeholder,
 #admission form input[type=email]::placeholder,
 #admission form input[type=tel]::placeholder,
 #admission form input[type=number]::placeholder,
-#admission form textarea::placeholder,
-section:has(form) form input[type=text]::placeholder,
-section:has(form) form input[type=email]::placeholder,
-section:has(form) form input[type=tel]::placeholder,
-section:has(form) form input[type=number]::placeholder,
-section:has(form) form textarea::placeholder,
-section:has(input[type=text]) form input[type=text]::placeholder,
-section:has(input[type=text]) form input[type=email]::placeholder,
-section:has(input[type=text]) form input[type=tel]::placeholder,
-section:has(input[type=text]) form input[type=number]::placeholder,
-section:has(input[type=text]) form textarea::placeholder {
-  color: #71717a;
+#admission form textarea::placeholder {
+  color: var(--silver-color);
 }
-#admission form textarea,
-section:has(form) form textarea,
-section:has(input[type=text]) form textarea {
+#admission form textarea {
   min-height: 100px;
   resize: vertical;
 }
-#admission form input[type=submit],
-#admission form button[type=submit],
-section:has(form) form input[type=submit],
-section:has(form) form button[type=submit],
-section:has(input[type=text]) form input[type=submit],
-section:has(input[type=text]) form button[type=submit] {
-  align-self: flex-start;
-  margin-top: 10px;
+
+[data-theme=light] .button,
+[data-theme=light] button,
+[data-theme=light] input[type=submit],
+[data-theme=light] .btn,
+[data-theme=light] a.btn {
+  background: #e63533 !important;
+  border-color: #e63533 !important;
+  color: #ffffff !important;
+}
+[data-theme=light] .button:hover,
+[data-theme=light] button:hover,
+[data-theme=light] input[type=submit]:hover,
+[data-theme=light] .btn:hover,
+[data-theme=light] a.btn:hover {
+  background: #cf2a28 !important;
+  border-color: #cf2a28 !important;
+  box-shadow: 0 4px 12px rgba(230, 53, 51, 0.25);
+}
+[data-theme=light] #curriculum table,
+[data-theme=light] #curriculum .curriculum-table {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+[data-theme=light] #curriculum table thead tr,
+[data-theme=light] #curriculum .curriculum-table thead tr {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+[data-theme=light] #curriculum table th, [data-theme=light] #curriculum table td,
+[data-theme=light] #curriculum .curriculum-table th,
+[data-theme=light] #curriculum .curriculum-table td {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+[data-theme=light] #science .science-media img,
+[data-theme=light] section:has(img[src*=science]) img,
+[data-theme=light] section:has(img[src*=innovat]) img {
+  filter: invert(0.9) hue-rotate(180deg) contrast(1.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+[data-theme=light] #admission form input[type=text],
+[data-theme=light] #admission form input[type=email],
+[data-theme=light] #admission form input[type=tel],
+[data-theme=light] #admission form input[type=number],
+[data-theme=light] #admission form textarea {
+  background: #ffffff;
+  border-color: #d1d5db;
+}
+[data-theme=light] #partners,
+[data-theme=light] .partners-wrapper {
+  background: #f1f3f5 !important;
+  border-radius: 16px;
+  padding: 24px;
+}
+[data-theme=light] #partners img,
+[data-theme=light] .partners-wrapper img {
+  filter: invert(0.85);
 }
 
 header {
   width: 100%;
   padding: 24px 0;
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  flex-wrap: nowrap !important;
-  gap: 20px;
   box-sizing: border-box;
 }
 header .header-wrapper,
@@ -246,6 +357,7 @@ header .logo img {
   height: 34px;
   width: auto;
   display: block;
+  transition: filter 0.2s ease;
 }
 header nav {
   display: flex !important;
@@ -271,15 +383,15 @@ header nav ul li {
   white-space: nowrap !important;
 }
 header nav ul li a {
-  color: #ffffff !important;
+  color: var(--primary-text-color) !important;
   text-decoration: none !important;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   white-space: nowrap !important;
   transition: color 0.2s ease;
 }
 header nav ul li a:hover {
-  color: #FF3A3A !important;
+  color: var(--red-color) !important;
 }
 header .lang-switcher,
 header .search-wrapper,
@@ -287,14 +399,39 @@ header .header-actions {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 14px;
+  gap: 16px;
   flex-shrink: 0;
   white-space: nowrap !important;
+}
+header .lang-switcher .theme-toggle-btn,
+header .search-wrapper .theme-toggle-btn,
+header .header-actions .theme-toggle-btn {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+}
+header .lang-switcher .theme-toggle-btn:hover,
+header .search-wrapper .theme-toggle-btn:hover,
+header .header-actions .theme-toggle-btn:hover {
+  border-color: var(--red-color) !important;
+  background: rgba(255, 59, 57, 0.1) !important;
+  transform: rotate(15deg);
 }
 header .lang-switcher a,
 header .search-wrapper a,
 header .header-actions a {
-  color: #ffffff !important;
+  color: var(--primary-text-color) !important;
   text-decoration: none !important;
   font-size: 15px;
   font-weight: 600;
@@ -302,7 +439,7 @@ header .header-actions a {
 header .lang-switcher a:hover,
 header .search-wrapper a:hover,
 header .header-actions a:hover {
-  color: #FF3A3A !important;
+  color: var(--red-color) !important;
 }
 header .lang-switcher img,
 header .lang-switcher svg,
@@ -313,6 +450,13 @@ header .header-actions svg {
   width: 18px;
   height: 18px;
   display: block;
+}
+
+[data-theme=light] .logo img {
+  filter: invert(0.9) hue-rotate(180deg);
+}
+[data-theme=light] header .theme-toggle-btn {
+  border-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 footer {
@@ -334,14 +478,23 @@ footer .footer-column {
 footer p {
   margin: 0;
   line-height: 1.6;
-  color: #e2e8f0;
-  font-size: 15px;
+  color: var(--primary-text-color);
+  font-size: 14px;
 }
 footer .social-links,
 footer .social {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+footer .social-links a,
+footer .social a {
+  color: var(--primary-text-color);
+  text-decoration: none;
+}
+footer .social-links a:hover,
+footer .social a:hover {
+  color: var(--red-color);
 }
 footer .logo {
   display: flex;
@@ -353,6 +506,13 @@ footer .logo img {
   display: block;
 }
 
+[data-theme=light] footer {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+[data-theme=light] footer .logo img {
+  filter: invert(0.9) hue-rotate(180deg);
+}
+
 #feedbacks .cards-wrapper .card,
 #feedbacks .cards-wrapper .review-card,
 #feedbacks .reviews-carousel .card,
@@ -361,9 +521,9 @@ footer .logo img {
 #reviews .cards-wrapper .review-card,
 #reviews .reviews-carousel .card,
 #reviews .reviews-carousel .review-card {
-  padding: 24px;
+  padding: 20px;
   border-radius: 20px;
-  border: 1px solid #475569;
+  border: 1px solid var(--grey-color);
 }
 
 #in-numbers,
@@ -397,7 +557,7 @@ footer .logo img {
   flex: 1;
   text-align: center;
   padding: 10px 20px;
-  border-right: 1px solid #FF3A3A;
+  border-right: 1px solid var(--red-color);
 }
 #in-numbers .cards-wrapper .card:last-child,
 #in-numbers .cards-wrapper .stat-item:last-child,
@@ -409,10 +569,29 @@ footer .logo img {
 #stats .stats-grid .stat-item:last-child {
   border-right: none;
 }
+#in-numbers .cards-wrapper .card .stat-number,
+#in-numbers .cards-wrapper .stat-item .stat-number,
+#in-numbers .stats-grid .card .stat-number,
+#in-numbers .stats-grid .stat-item .stat-number,
+#stats .cards-wrapper .card .stat-number,
+#stats .cards-wrapper .stat-item .stat-number,
+#stats .stats-grid .card .stat-number,
+#stats .stats-grid .stat-item .stat-number {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  display: block;
+  margin-bottom: 8px;
+}
+
+[data-theme=light] #in-numbers,
+[data-theme=light] #stats {
+  background: #f1f5f9;
+}
 
 #news .news-cards .news-card,
 #news .news-list .news-card {
-  border-right: 1px solid #FF3A3A;
+  border-right: 1px solid var(--red-color);
 }
 #news .news-cards .news-card:last-child,
 #news .news-list .news-card:last-child {
@@ -425,13 +604,28 @@ footer .logo img {
   padding: 10px;
 }
 
-#specialties .cards-wrapper .card,
-#specialties .cards-wrapper .specialty-card,
+#specialties .specialties-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 25px;
+}
 #specialties .specialties-cards .card,
 #specialties .specialties-cards .specialty-card {
-  padding: 24px;
+  padding: 20px;
   border-radius: 20px;
-  border: 1px solid #475569;
+  border: 1px solid var(--grey-color);
+  background: transparent;
+}
+#specialties .specialties-cards .card h3,
+#specialties .specialties-cards .specialty-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 26px;
+}
+#specialties .specialties-cards .card p,
+#specialties .specialties-cards .specialty-card p {
+  margin: 0;
+  color: var(--primary-text-color);
 }
 
 /*# sourceMappingURL=main.css.map */
