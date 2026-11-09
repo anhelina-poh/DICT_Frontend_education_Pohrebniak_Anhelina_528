@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 
-// Тіло сторінки
 body {
   background: var(--primary-color);
   color: var(--primary-text-color);
@@ -23,7 +22,7 @@ section {
   margin: 55px 0;
 }
 
-// Кнопки сайту
+// Кнопки
 .button,
 button,
 input[type="submit"],
@@ -61,14 +60,62 @@ a.btn {
   }
 }
 
-// Банер Hero
-.hero,
-section:first-of-type {
-  img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
+// Головний банер сайту
+#banner {
+  width: 100%;
+  min-height: 520px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 30px;
+  position: relative;
+  margin: 20px 0 60px 0;
+
+  .content-wrapper {
+    flex: 1 1 55%;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 2;
+
+    h1 {
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .description p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--primary-text-color);
+    }
+
+    .button {
+      margin: 0;
+      width: fit-content;
+    }
+  }
+
+  .image-wrapper {
+    flex: 1 1 45%;
+    min-width: 340px;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      min-height: 380px;
+      display: block !important;
+      object-fit: contain;
+    }
   }
 }
 
@@ -147,6 +194,46 @@ section:has(img[src*="innovat"]) {
   }
 }
 
+// Розділ "Нам довіряють"
+#partners {
+  margin: 50px 0;
+  text-align: left;
+
+  .partners-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: var(--primary-text-color);
+  }
+
+  .partners-wrapper {
+    background: #18181b;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-width: 960px;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+// Світла тема
+[data-theme="light"] {
+  #partners .partners-wrapper {
+    background: #e9ecef !important;
+
+    img {
+      filter: invert(0.85);
+    }
+  }
+}
+
 // Вступ 2025: форма
 #admission {
   form {
@@ -196,7 +283,6 @@ section:has(img[src*="innovat"]) {
 
 // Світла тема
 [data-theme="light"] {
-  // Кнопки
   .button,
   button,
   input[type="submit"],
@@ -213,7 +299,6 @@ section:has(img[src*="innovat"]) {
     }
   }
 
-  // Таблиця
   #curriculum table,
   #curriculum .curriculum-table {
     border-color: rgba(0, 0, 0, 0.15);
@@ -227,7 +312,6 @@ section:has(img[src*="innovat"]) {
     }
   }
 
-  // Картка-дашборд "Наука та інновації"
   #science .science-media img,
   section:has(img[src*="science"]) img,
   section:has(img[src*="innovat"]) img {
@@ -236,7 +320,6 @@ section:has(img[src*="innovat"]) {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   }
 
-  // Поля введення
   #admission form {
     input[type="text"],
     input[type="email"],
@@ -248,14 +331,15 @@ section:has(img[src*="innovat"]) {
     }
   }
 
-  // Партнери
-  #partners,
-  .partners-wrapper {
-    background: #f1f3f5 !important;
-    border-radius: 16px;
-    padding: 24px;
+  // Партнери у світлій темі
+  #partners .partners-wrapper {
+    background: #e9ecef !important;
 
-    img {
+    .partners-title {
+      color: #1d1d1d !important;
+    }
+
+    .partners-logos img {
       filter: invert(0.85);
     }
   }
