@@ -19,22 +19,36 @@
         </a>
 
         <nav>
-            <ul>
-                <li><a href="#specialties">Спеціальності</a></li>
-                <li><a href="#curriculum">Освітня програма</a></li>
-                <li><a href="#science">Наука</a></li>
-                <li><a href="#news">Новини</a></li>
-                <li><a href="#admission">Вступ 2025</a></li>
+            <ul class="main-menu">
+                <li><a href="#specialties" class="menu-link" data-i18n="nav_specialties">СПЕЦІАЛЬНОСТІ</a></li>
+                <li><a href="#curriculum" class="menu-link" data-i18n="nav_curriculum">ОСВІТНЯ ПРОГРАМА</a></li>
+                <li><a href="#science" class="menu-link" data-i18n="nav_science">НАУКА</a></li>
+                <li><a href="#news" class="menu-link" data-i18n="nav_news">НОВИНИ</a></li>
+                <li><a href="#admission" class="menu-link" data-i18n="nav_admission">ВСТУП 2025</a></li>
             </ul>
         </nav>
 
         <div class="header-actions">
+            <!-- Перемикач теми -->
             <button type="button" id="theme-toggle" class="theme-toggle-btn" title="Змінити тему" aria-label="Перемикач теми">
                 <span class="theme-icon">☀️</span>
             </button>
-            <a href="#" class="search-btn" title="Пошук по сайту">🔍</a>
-            <div class="lang-switcher">
-                <span>UA</span> | <a href="#">EN</a>
+
+            <!-- Пошук -->
+            <a href="#" class="search-btn" title="Пошук по сайту" aria-label="Пошук">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </a>
+
+            <!-- Тумблер перемикання мови -->
+            <div class="lang-switch-box" id="lang-toggle-btn" title="Перемкнути мову">
+                <span class="lang-label ua active">UA</span>
+                <div class="lang-slider">
+                    <span class="lang-circle"></span>
+                </div>
+                <span class="lang-label en">EN</span>
             </div>
         </div>
     </div>
@@ -43,26 +57,26 @@
 <!-- Основна частина сторінки -->
 <main>
 
-    <!-- Банер сайту -->
-    <section id="banner" class="hero">
-        <div class="banner-content">
-            <h1>Створюй майбутнє. Тут і зараз!</h1>
-            <p class="large">
-                Вибери не просто освіту — обери шлях до свого технологічного майбутнього!<br>
-                Кафедра ІКТ ХАІ — це місце, де ідеї стають реальністю, а знання відкривають двері до кар’єри мрії.<br>
-                Почни свій шлях вже сьогодні!
-            </p>
-            <button type="button" class="button">ХОЧУ ПОСТУПИТИ</button>
+    <!-- Головний банер сайту -->
+    <section id="banner">
+        <div class="content-wrapper">
+            <h1 data-i18n="banner_title">Створюй майбутнє. Тут і зараз!</h1>
+            <div class="description">
+                <p data-i18n="banner_desc">
+                    Вибери не просто освіту — обери шлях до свого технологічного майбутнього! Кафедра ІКТ ХАІ — це місце, де ідеї стають реальністю, а знання відкривають двері до кар’єри мрії. Почни свій шлях вже сьогодні!
+                </p>
+            </div>
+            <button type="button" class="button" data-i18n="banner_btn">ХОЧУ ПОСТУПИТИ</button>
         </div>
-        <div class="banner-media">
+        <div class="image-wrapper">
             <img src="images/banner-student.svg" alt="Студент кафедри ІКТ" title="Створюй майбутнє разом з ІКТ">
         </div>
     </section>
 
     <!-- Розділ "Наші спеціальності" -->
     <section id="specialties">
-        <h2>Наші спеціальності</h2>
-        <p>
+        <h2 data-i18n="specialties_title">Наші спеціальності</h2>
+        <p data-i18n="specialties_desc">
             Ми спеціалізуємось на підготовці фахівців в області мережевих,
             програмних та інформаційних технологій за двома ключовими напрямками:
         </p>
@@ -70,77 +84,77 @@
         <div class="specialties-cards">
             <div class="card specialty-card">
                 <h3>126</h3>
-                <p>«Інформаційні системи й технології»</p>
+                <p data-i18n="spec_126">«Інформаційні системи й технології»</p>
             </div>
             <div class="card specialty-card">
                 <h3>172</h3>
-                <p>«Електронні комунікації та радіотехніка»</p>
+                <p data-i18n="spec_172">«Електронні комунікації та радіотехніка»</p>
             </div>
         </div>
     </section>
 
     <!-- Освітня програма -->
     <section id="curriculum">
-        <h2>Освітня програма спеціальності «Інжиніринг і програмування інфокомунікаційних систем»</h2>
-        <h3>1 Курс</h3>
+        <h2 data-i18n="curriculum_title">Освітня програма спеціальності «Інжиніринг і програмування інфокомунікаційних систем»</h2>
+        <h3 data-i18n="curriculum_year">1 Курс</h3>
 
         <div class="table-container">
             <table class="curriculum-table">
                 <thead>
                 <tr>
-                    <th>1 семестр</th>
-                    <th>Кредити</th>
-                    <th>2 семестр</th>
-                    <th>Кредити</th>
+                    <th data-i18n="th_sem1">1 семестр</th>
+                    <th data-i18n="th_credits1">Кредити</th>
+                    <th data-i18n="th_sem2">2 семестр</th>
+                    <th data-i18n="th_credits2">Кредити</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Мовні компетентності (іноземна мова)</td>
+                    <td data-i18n="course_1">Мовні компетентності (іноземна мова)</td>
                     <td>3.00</td>
-                    <td>Іноземна мова</td>
-                    <td>3.00</td>
-                </tr>
-                <tr>
-                    <td>Українські студії</td>
-                    <td>3.00</td>
-                    <td>«Формування системного наукового світогляду» (за вибором)</td>
+                    <td data-i18n="course_2">Іноземна мова</td>
                     <td>3.00</td>
                 </tr>
                 <tr>
-                    <td>Правова компетентність (на вибір)</td>
+                    <td data-i18n="course_3">Українські студії</td>
                     <td>3.00</td>
-                    <td>Основи теорії кіл</td>
+                    <td data-i18n="course_4">«Формування системного наукового світогляду» (за вибором)</td>
+                    <td>3.00</td>
+                </tr>
+                <tr>
+                    <td data-i18n="course_5">Правова компетентність (на вибір)</td>
+                    <td>3.00</td>
+                    <td data-i18n="course_6">Основи теорії кіл</td>
                     <td>4.00</td>
                 </tr>
                 <tr>
-                    <td>Вища математика</td>
+                    <td data-i18n="course_7">Вища математика</td>
                     <td>5.00</td>
-                    <td>Вища математика</td>
-                    <td>5.00</td>
-                </tr>
-                <tr>
-                    <td>Дискретна математика</td>
-                    <td>5.00</td>
-                    <td>Фізика</td>
+                    <td data-i18n="course_7">Вища математика</td>
                     <td>5.00</td>
                 </tr>
                 <tr>
-                    <td>Основи інфокомунікацій</td>
+                    <td data-i18n="course_8">Дискретна математика</td>
                     <td>5.00</td>
-                    <td>Алгоритми й структури даних</td>
+                    <td data-i18n="course_9">Фізика</td>
+                    <td>5.00</td>
+                </tr>
+                <tr>
+                    <td data-i18n="course_10">Основи інфокомунікацій</td>
+                    <td>5.00</td>
+                    <td data-i18n="course_11">Алгоритми й структури даних</td>
                     <td>4.00</td>
                 </tr>
                 <tr>
-                    <td>Програмування на Python</td>
+                    <td data-i18n="course_12">Програмування на Python</td>
                     <td>4.50</td>
-                    <td>Програмування на Python</td>
+                    <td data-i18n="course_12">Програмування на Python</td>
                     <td>4.50</td>
                 </tr>
                 <tr>
                     <td>—</td>
                     <td>—</td>
-                    <td>Навчальна практика</td>
+                    <td data-i18n="course_13">Навчальна практика</td>
                     <td>3.00</td>
                 </tr>
                 </tbody>
@@ -148,10 +162,10 @@
         </div>
 
         <div class="curriculum-description">
-            <p>
+            <p data-i18n="curr_desc_1">
                 Перший предмет "Основи інфокомунікацій" розповість про цілі навчання освітньої програми, сучасні тенденції в інфокомунікаціях, інформаційних технологіях та перспективи вашого розвитку. Як і в усьому ХАІ, студент формує свою власну навчальну траєкторію вже на 1 курсі за допомогою дисциплін за вибором: "Іноземна мова", "Українські студії", "Гуманітарна або економічна дисципліна за вибором", "Правова компетентність за вибором". Вони розвивають так звані "м'які навички" (Soft Skills) і полегшують подальше навчання.
             </p>
-            <p>
+            <p data-i18n="curr_desc_2">
                 Фундаментальні курси "Вища математика", "Дискретна математика", "Фізика" формують основу для вивчення прикладних дисциплін. "Основи теорії кіл" знайомлять з апаратною електронікою. В "Основах програмування" фундаментально вивчається мова Python, IDE та Git. Курс "Алгоритми й структури даних" розвиває інженерне мислення, а "Навчальна практика" присвячена операційним системам сімейства Linux.
             </p>
         </div>
@@ -159,23 +173,23 @@
 
     <!-- Розділ "Якщо в числах" -->
     <section id="in-numbers">
-        <h2>Якщо в числах</h2>
+        <h2 data-i18n="numbers_title">Якщо в числах</h2>
         <div class="cards-wrapper">
             <div class="card">
                 <span class="stat-number">18</span>
-                <p>Досвідчених викладачів</p>
+                <p data-i18n="stat_1">Досвідчених викладачів</p>
             </div>
             <div class="card">
                 <span class="stat-number">65</span>
-                <p>Навчальних дисциплін</p>
+                <p data-i18n="stat_2">Навчальних дисциплін</p>
             </div>
             <div class="card">
                 <span class="stat-number">1200+</span>
-                <p>Талановитих випускників</p>
+                <p data-i18n="stat_3">Талановитих випускників</p>
             </div>
             <div class="card">
                 <span class="stat-number">∞</span>
-                <p>Унікального досвіду</p>
+                <p data-i18n="stat_4">Унікального досвіду</p>
             </div>
         </div>
     </section>
@@ -185,14 +199,14 @@
         <h2>#DICTExperience</h2>
         <div class="reviews-carousel">
             <article class="card review-card">
-                <blockquote>"Освіта на кафедрі ІКТ дає не лише сучасну технічну базу, але й гнучкість мислення, необхідну для роботи у провідних міжнародних IT-компаніях."</blockquote>
-                <p><strong>Олексій Коваленко</strong></p>
-                <small>Senior Network Engineer, EPAM Systems</small>
+                <blockquote data-i18n="feedback_text">"Освіта на кафедрі ІКТ дає не лише сучасну технічну базу, але й гнучкість мислення, необхідну для роботи у провідних міжнародних IT-компаніях."</blockquote>
+                <p><strong data-i18n="feedback_author">Олексій Коваленко</strong></p>
+                <small data-i18n="feedback_role">Senior Network Engineer, EPAM Systems</small>
             </article>
         </div>
 
         <div class="audio-feedback">
-            <p>Аудіовідгук випускника кафедри:</p>
+            <p data-i18n="audio_title">Аудіовідгук випускника кафедри:</p>
             <audio controls>
                 <source src="media/audio-review.mp3" type="audio/mpeg">
                 Ваш браузер не підтримує аудіоелемент.
@@ -203,12 +217,12 @@
     <!-- Розділ "Наука та інновації" -->
     <section id="science">
         <div class="science-content">
-            <h2>Наука та інновації</h2>
-            <p class="large">Від аудиторії — до реального проєкту.</p>
-            <p>
+            <h2 data-i18n="science_title">Наука та інновації</h2>
+            <p class="large" data-i18n="science_subtitle">Від аудиторії — до реального проєкту.</p>
+            <p data-i18n="science_desc">
                 Наші студенти не просто вивчають теорію — вони беруть участь у реальних проєктах, розробляють ІТ-рішення, створюють стартапи та співпрацюють з компаніями-партнерами. На кафедрі діють наукові лабораторії та ініціативи, де кожен знаходить свій вектор розвитку.
             </p>
-            <button type="button" class="button">ДІЗНАТИСЬ БІЛЬШЕ</button>
+            <button type="button" class="button" data-i18n="science_btn">ДІЗНАТИСЬ БІЛЬШЕ</button>
         </div>
         <div class="science-media">
             <img src="images/science-dashboard.svg" alt="Панель аналітики та науки" title="Наука та інновації в ІКТ">
@@ -217,71 +231,72 @@
 
     <!-- Розділ "Нам довіряють" -->
     <section id="partners">
+        <h2 class="partners-title" data-i18n="partners_title">Нам довіряють</h2>
         <div class="partners-wrapper">
-            <img src="images/partners.svg" alt="Партнери кафедри ІКТ" title="Нам довіряють">
+            <img src="images/partners.svg" alt="Партнери кафедри ІКТ">
         </div>
     </section>
 
     <!-- Розділ: Форма зворотного зв'язку -->
     <section id="admission">
-        <h2>Вступ 2025</h2>
+        <h2 data-i18n="admission_title">Вступ 2025</h2>
         <form action="#" method="post" class="admission-form">
             <div class="form-group">
-                <label for="fullName">Ваше ім'я та прізвище</label>
+                <label for="fullName" data-i18n="form_name">Ваше ім'я та прізвище</label>
                 <input type="text" id="fullName" name="fullName" placeholder="Введіть відповідь" required>
             </div>
 
             <div class="form-group">
-                <label for="phone">Контактний телефон</label>
+                <label for="phone" data-i18n="form_phone">Контактний телефон</label>
                 <input type="tel" id="phone" name="phone" placeholder="+38 (0XX) XXX-XX-XX" required>
             </div>
 
             <div class="form-group">
-                <label for="email">Електронна пошта</label>
+                <label for="email" data-i18n="form_email">Електронна пошта</label>
                 <input type="email" id="email" name="email" placeholder="example@mail.com" required>
             </div>
 
             <div class="form-group">
-                <label for="city">Місто / село</label>
+                <label for="city" data-i18n="form_city">Місто / село</label>
                 <input type="text" id="city" name="city" placeholder="Введіть ваш населений пункт">
             </div>
 
             <div class="form-grid-nmt">
                 <div class="form-group">
-                    <label for="nmtMath">Бал НМТ: Математика</label>
+                    <label for="nmtMath" data-i18n="form_math">Бал НМТ: Математика</label>
                     <input type="number" id="nmtMath" name="nmtMath" min="100" max="200" placeholder="100 – 200">
                 </div>
                 <div class="form-group">
-                    <label for="nmtUa">Бал НМТ: Українська мова</label>
+                    <label for="nmtUa" data-i18n="form_ua">Бал НМТ: Українська мова</label>
                     <input type="number" id="nmtUa" name="nmtUa" min="100" max="200" placeholder="100 – 200">
                 </div>
                 <div class="form-group">
-                    <label for="nmtHist">Бал НМТ: Історія України</label>
+                    <label for="nmtHist" data-i18n="form_hist">Бал НМТ: Історія України</label>
                     <input type="number" id="nmtHist" name="nmtHist" min="100" max="200" placeholder="100 – 200">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="nmtFourth">Четвертий предмет з НМТ і бал</label>
+                <label for="nmtFourth" data-i18n="form_fourth">Четвертий предмет з НМТ і бал</label>
                 <input type="text" id="nmtFourth" name="nmtFourth" placeholder="Наприклад: Англійська мова — 185">
             </div>
 
             <div class="form-group">
-                <label for="interests">Які напрями вас найбільше цікавлять?</label>
+                <label for="interests" data-i18n="form_interests">Які напрями вас найбільше цікавлять?</label>
                 <textarea id="interests" name="interests" rows="4" placeholder="Опишіть ваші інтереси у сфері IT..."></textarea>
             </div>
 
-            <button type="submit" class="button">НАДІСЛАТИ ЗАЯВКУ</button>
+            <button type="submit" class="button" data-i18n="form_btn">НАДІСЛАТИ ЗАЯВКУ</button>
         </form>
     </section>
 
     <!-- Розділ "Новини" -->
     <section id="news">
-        <h2>Новини</h2>
+        <h2 data-i18n="news_title">Новини</h2>
         <div class="news-list">
             <article class="news-card">
-                <p>Відбулась зустріч студентів факультету радіоелектроніки та інфокомунікацій з представниками провідних IT-компаній регіону.</p>
-                <time datetime="2026-01-07">07 січня 2026</time>
+                <p data-i18n="news_item">Відбулась зустріч студентів факультету радіоелектроніки та інфокомунікацій з представниками провідних IT-компаній регіону.</p>
+                <time datetime="2026-01-07" data-i18n="news_date">07 січня 2026</time>
             </article>
         </div>
 
@@ -292,7 +307,7 @@
             </video>
         </div>
 
-        <button type="button" class="button">БІЛЬШЕ НОВИН</button>
+        <button type="button" class="button" data-i18n="news_btn">БІЛЬШЕ НОВИН</button>
     </section>
 
 </main>
@@ -300,7 +315,7 @@
 <!-- Нижній колонтитул сайту -->
 <footer>
     <div class="footer-col footer-address">
-        <p>61070, Харківська область, Харків, вул. Вадима Манька, 17<br>
+        <p data-i18n="footer_addr">61070, Харківська область, Харків, вул. Вадима Манька, 17<br>
             НАУ ім. М.Є. Жуковського "ХАІ"<br>
             Кафедра інформаційно-комунікаційних технологій №504</p>
     </div>

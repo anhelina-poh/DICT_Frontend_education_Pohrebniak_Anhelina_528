@@ -2,9 +2,6 @@
   <!-- Фон блоку -->
   <rect width="1100" height="170" rx="10" fill="#222222"/>
 
-  <!-- Заголовок розділу -->
-  <text x="50%" y="42" dominant-baseline="middle" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold" font-size="22">Нам довіряють</text>
-
   <!-- Блок логотипів -->
   <g transform="translate(40, 75)" fill="#B0B0B0" font-family="Arial, sans-serif">
     
