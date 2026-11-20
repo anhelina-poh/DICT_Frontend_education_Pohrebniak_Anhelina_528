@@ -1,0 +1,248 @@
+@use "../variables/fonts" as *;
+@use "../variables/colors" as *;
+
+// Активний пункт меню
+header nav .main-menu .menu-link.active-link {
+  color: var(--red-color) !important;
+}
+
+// Основний контейнер сторінки
+.grid-page-main {
+  margin: 30px 0 60px 0;
+  display: grid;
+  gap: 30px;
+
+  .grid-hero {
+    margin: 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 38px;
+      color: var(--primary-text-color);
+    }
+
+    p {
+      margin: 0;
+      color: var(--silver-color);
+    }
+  }
+}
+
+// Двоколонкова сітка
+.grid-layout-wrapper {
+  display: grid;
+  grid-template-columns: 2.35fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+// Картка основного контенту
+.grid-main-card {
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 28px;
+
+  h2 {
+    margin: 0 0 14px 0;
+    font-size: 26px;
+  }
+
+  > p {
+    margin: 0 0 28px 0;
+    line-height: 1.6;
+    font-size: 15px;
+    color: var(--primary-text-color);
+  }
+}
+
+// Галерея зображень
+.gallery-block {
+  h3 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+  }
+
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+
+    .gallery-card {
+      margin: 0;
+      background: #222226;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 20px;
+      display: grid;
+      grid-template-rows: 130px auto;
+      gap: 14px;
+      place-items: center;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        border-color: var(--red-color);
+        box-shadow: 0 8px 20px rgba(255, 59, 57, 0.12);
+      }
+
+      .card-media {
+        width: 100%;
+        height: 130px;
+        display: grid;
+        place-items: center;
+
+        img {
+          max-width: 90%;
+          max-height: 120px;
+          object-fit: contain;
+          display: block;
+          border-radius: 8px;
+          transition: filter 0.25s ease;
+        }
+      }
+
+      figcaption {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--primary-text-color);
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Бічна панель
+.grid-sidebar-card {
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  .sidebar-top {
+    display: grid;
+    gap: 16px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--primary-text-color);
+  }
+
+  > p {
+    margin: -8px 0 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--silver-color);
+  }
+
+  .sidebar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+
+    li a {
+      display: block;
+      padding: 11px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--primary-text-color);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(255, 59, 57, 0.15);
+        color: var(--red-color);
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  .sidebar-badge {
+    margin-top: auto;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--red-color);
+    background: rgba(255, 59, 57, 0.08);
+    text-align: center;
+
+    .badge-title {
+      display: block;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--red-color);
+      margin-bottom: 4px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--primary-text-color);
+    }
+  }
+}
+
+// Світла тема
+[data-theme="light"] {
+  .grid-page-main .grid-hero {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+
+    p {
+      color: #555555;
+    }
+  }
+
+  .grid-main-card,
+  .grid-sidebar-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .gallery-block .grid-gallery .gallery-card {
+    background: #f4f5f7;
+    border-color: rgba(0, 0, 0, 0.08);
+
+    img.invert-on-light {
+      filter: invert(0.9) hue-rotate(180deg);
+    }
+  }
+
+  .grid-sidebar-card {
+    > p {
+      color: #555555;
+    }
+
+    .sidebar-links li a {
+      background: #f4f5f7;
+
+      &:hover {
+        background: rgba(230, 53, 51, 0.1);
+      }
+    }
+  }
+}
+
+// Адаптивність
+@media (max-width: 860px) {
+  .grid-layout-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-block .grid-gallery {
+    grid-template-columns: 1fr;
+  }
+}
