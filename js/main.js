@@ -1,38 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Тема оформлення
+    // Бургер-меню (перемикання класу show)
+    const burgerBtn = document.getElementById('burger-btn');
+    const mainMenu = document.getElementById('main-menu');
+
+    if (burgerBtn && mainMenu) {
+        burgerBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('show');
+        });
+
+        mainMenu.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mainMenu.classList.remove('show');
+            });
+        });
+    }
+
+    // Тема оформлення (синхронізація між сторінками в межах сесії)
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('.theme-icon') : null;
     const htmlElement = document.documentElement;
 
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    htmlElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+    const currentSavedTheme = sessionStorage.getItem('site_theme') || 'dark';
+    htmlElement.setAttribute('data-theme', currentSavedTheme);
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
             htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+            sessionStorage.setItem('site_theme', newTheme);
         });
     }
 
-    function updateThemeIcon(theme) {
-        if (!themeIcon) return;
-        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-    }
-
     // noinspection SpellCheckingInspection
-    // 2. Повний словник перекладу на обидві мови
+    // Словник перекладу
     const translations = {
         uk: {
+            menu_btn: "Меню",
             nav_specialties: "СПЕЦІАЛЬНОСТІ",
             nav_curriculum: "ОСВІТНЯ ПРОГРАМА",
             nav_science: "НАУКА",
             nav_news: "НОВИНИ",
             nav_admission: "ВСТУП 2025",
+            nav_grid: "GRID LAYOUT",
             banner_title: "Створюй майбутнє. Тут і зараз!",
             banner_desc: "Вибери не просто освіту — обери шлях до свого технологічного майбутнього! Кафедра ІКТ ХАІ — це місце, де ідеї стають реальністю, а знання відкривають двері до кар’єри мрії. Почни свій шлях вже сьогодні!",
             banner_btn: "ХОЧУ ПОСТУПИТИ",
@@ -86,18 +95,42 @@ document.addEventListener('DOMContentLoaded', () => {
             form_fourth: "Четвертий предмет з НМТ і бал",
             form_interests: "Які напрями вас найбільше цікавлять?",
             form_btn: "НАДІСЛАТИ ЗАЯВКУ",
+            ph_name: "Введіть відповідь",
+            ph_city: "Введіть ваш населений пункт",
+            ph_fourth: "Наприклад: Англійська мова — 185",
+            ph_interests: "Опишіть ваші інтереси у сфері IT...",
             news_title: "Новини",
             news_item: "Відбулась зустріч студентів факультету радіоелектроніки та інфокомунікацій з представниками провідних IT-компаній регіону.",
             news_date: "07 січня 2026",
             news_btn: "БІЛЬШЕ НОВИН",
+            grid_hero_title: "CSS Grid Layout",
+            grid_hero_desc: "Двовимірна сіткова система компонування елементів на сторінці кафедри ІКТ ХАІ.",
+            grid_main_title: "Основна частина сторінки",
+            grid_main_desc: "CSS Grid дозволяє одночасно керувати рядками та колонками макета. У цьому блоці продемонстровано розподіл основного контенту та бічної колонки, а також адаптивну галерею зображень.",
+            grid_gallery_title: "Галерея зображень",
+            gal_1: "Навчання та практика",
+            gal_2: "Наукові дослідження",
+            gal_3: "Айдентика кафедри №504",
+            gal_4: "IT-партнери ХАІ",
+            grid_side_title: "Навігація та розділи",
+            grid_side_desc: "Швидкий перехід до ключових секцій сайту кафедри:",
+            side_home: "← На головну сторінку",
+            side_spec: "Спеціальності 126 та 172",
+            side_curr: "Освітня програма 1 курсу",
+            side_sci: "Наука та інновації",
+            side_adm: "Подати заявку на вступ",
+            side_badge_title: "Кафедра ІКТ №504",
+            side_badge_sub: "НАУ ім. М.Є. Жуковського «ХАІ»",
             footer_addr: "61070, Харківська область, Харків, вул. Вадима Манька, 17<br>НАУ ім. М.Є. Жуковського \"ХАІ\"<br>Кафедра інформаційно-комунікаційних технологій №504"
         },
         en: {
+            menu_btn: "Menu",
             nav_specialties: "SPECIALTIES",
             nav_curriculum: "CURRICULUM",
             nav_science: "SCIENCE",
             nav_news: "NEWS",
             nav_admission: "ADMISSION 2025",
+            nav_grid: "GRID LAYOUT",
             banner_title: "Shape the Future. Here and Now!",
             banner_desc: "Choose more than just an education — choose the pathway to your tech future! The Department of ICT at KhAI is where ideas become reality and knowledge opens doors to your dream career. Start today!",
             banner_btn: "APPLY NOW",
@@ -151,27 +184,49 @@ document.addEventListener('DOMContentLoaded', () => {
             form_fourth: "Fourth Subject & Score",
             form_interests: "Which IT fields interest you the most?",
             form_btn: "SUBMIT APPLICATION",
+            ph_name: "Enter your full name",
+            ph_city: "Enter your city or town",
+            ph_fourth: "For example: English — 185",
+            ph_interests: "Describe your interests in IT...",
             news_title: "News",
             news_item: "Meeting between students of the Radio Electronics and Infocommunications faculty and leading IT industry leaders.",
             news_date: "07 January 2026",
             news_btn: "MORE NEWS",
+            grid_hero_title: "CSS Grid Layout",
+            grid_hero_desc: "Two-dimensional grid-based layout system on the Department of ICT KhAI website.",
+            grid_main_title: "Main Page Content",
+            grid_main_desc: "CSS Grid allows simultaneous control over rows and columns of the layout. This block demonstrates the distribution of main content and sidebar, as well as a responsive image gallery.",
+            grid_gallery_title: "Image Gallery",
+            gal_1: "Education & Practice",
+            gal_2: "Scientific Research",
+            gal_3: "Department №504 Identity",
+            gal_4: "KhAI IT Partners",
+            grid_side_title: "Navigation & Sections",
+            grid_side_desc: "Quick navigation to key sections of the department website:",
+            side_home: "← Back to Home Page",
+            side_spec: "Specialties 126 and 172",
+            side_curr: "Year 1 Curriculum",
+            side_sci: "Science and Innovations",
+            side_adm: "Submit Admission Application",
+            side_badge_title: "Department of ICT №504",
+            side_badge_sub: "National Aerospace University \"KhAI\"",
             footer_addr: "61070, Kharkiv Oblast, Kharkiv, Vadym Manko St., 17<br>National Aerospace University \"KhAI\"<br>Department of Information and Communication Technologies №504"
         }
     };
 
-    // 3. Інтерактивний тумблер-пігулка
+    // Перемикач мови
     const langToggleBtn = document.getElementById('lang-toggle-btn');
     const uaLabel = langToggleBtn ? langToggleBtn.querySelector('.lang-label.ua') : null;
     const enLabel = langToggleBtn ? langToggleBtn.querySelector('.lang-label.en') : null;
 
-    let currentLang = localStorage.getItem('site_lang') || 'uk';
+    let currentLang = sessionStorage.getItem('site_lang') || 'uk';
     applyLanguage(currentLang);
 
     if (langToggleBtn) {
         langToggleBtn.addEventListener('click', () => {
             currentLang = currentLang === 'uk' ? 'en' : 'uk';
             applyLanguage(currentLang);
-            localStorage.setItem('site_lang', currentLang);
+            sessionStorage.setItem('site_lang', currentLang);
         });
     }
 
@@ -199,6 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     el.textContent = translations[lang][key];
                 }
+            }
+        });
+
+        const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+        placeholderElements.forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (translations[lang] && translations[lang][key]) {
+                el.setAttribute('placeholder', translations[lang][key]);
             }
         });
     }

@@ -1,0 +1,241 @@
+@use "../variables/fonts" as *;
+@use "../variables/colors" as *;
+
+header nav .main-menu .menu-link.active-link {
+  color: var(--red-color) !important;
+}
+
+// Mobile-first контейнер сторінки Grid
+.grid-page-main {
+  width: 100%;
+  margin: 24px 0 50px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+  .grid-hero {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    h1 {
+      margin: 0 0 10px 0;
+      color: var(--primary-text-color);
+    }
+
+    p {
+      margin: 0;
+      color: var(--silver-color);
+    }
+  }
+}
+
+// Сітка
+.grid-layout-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: stretch;
+
+  @media (min-width: 796px) {
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 2.4fr 1fr;
+  }
+}
+
+.grid-main-card {
+  width: 100%;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 22px;
+
+  @media (min-width: 796px) {
+    padding: 28px;
+  }
+
+  h2 {
+    margin: 0 0 14px 0;
+  }
+
+  > p {
+    margin: 0 0 24px 0;
+    color: var(--primary-text-color);
+  }
+}
+
+// Галерея зображень
+.gallery-block {
+  h3 {
+    margin: 0 0 16px 0;
+  }
+
+  .grid-gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 796px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-card {
+      width: 100%;
+      margin: 0;
+      background: #222226;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 18px;
+      display: grid;
+      grid-template-rows: 120px auto;
+      gap: 12px;
+      place-items: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        border-color: var(--red-color);
+      }
+
+      .card-media {
+        width: 100%;
+        height: 120px;
+        display: grid;
+        place-items: center;
+
+        img {
+          width: auto;
+          max-width: 90%;
+          max-height: 110px;
+          object-fit: contain;
+          display: block;
+          border-radius: 8px;
+        }
+      }
+
+      figcaption {
+        font-weight: 700;
+        color: var(--primary-text-color);
+        text-align: center;
+      }
+    }
+  }
+}
+
+.grid-sidebar-card {
+  width: 100%;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  .sidebar-top {
+    display: grid;
+    gap: 14px;
+  }
+
+  h3 {
+    margin: 0;
+    color: var(--primary-text-color);
+  }
+
+  p {
+    margin: 0;
+    color: var(--silver-color);
+  }
+
+  .sidebar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+
+    li a {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--primary-text-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(255, 59, 57, 0.15);
+        color: var(--red-color);
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  .sidebar-badge {
+    margin-top: auto;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--red-color);
+    background: rgba(255, 59, 57, 0.08);
+    text-align: center;
+
+    .badge-title {
+      display: block;
+      font-weight: 700;
+      color: var(--red-color);
+      margin-bottom: 4px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--primary-text-color);
+    }
+  }
+}
+
+// Світла тема
+[data-theme="light"] {
+  .grid-page-main .grid-hero {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+
+    p {
+      color: #555555;
+    }
+  }
+
+  .grid-main-card,
+  .grid-sidebar-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  .gallery-block .grid-gallery .gallery-card {
+    background: #f4f5f7;
+    border-color: rgba(0, 0, 0, 0.08);
+
+    img.invert-on-light {
+      filter: invert(0.9) hue-rotate(180deg);
+    }
+  }
+
+  .grid-sidebar-card {
+    p {
+      color: #555555;
+    }
+
+    .sidebar-links li a {
+      background: #f4f5f7;
+    }
+  }
+}
