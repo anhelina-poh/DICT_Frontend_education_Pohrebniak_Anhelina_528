@@ -1,92 +1,126 @@
 @use "../variables/typography" as *;
 @use "../variables/colors" as *;
 
-// Верхній колонтитул сайту
+// Верхній колонтитул (Mobile-first)
 header {
   width: 100%;
-  padding: 24px 0;
+  padding: 18px 0;
   box-sizing: border-box;
+  position: relative;
+  z-index: 100;
 
   .header-wrapper {
     width: 100%;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: relative;
   }
 
   // Логотип
   .logo {
-    display: flex !important;
-    align-items: center !important;
+    display: flex;
+    align-items: center;
     flex-shrink: 0;
 
     img {
-      height: 34px;
+      height: 28px;
       width: auto;
       display: block;
       transition: filter 0.2s ease;
+
+      @media (min-width: 796px) {
+        height: 34px;
+      }
     }
   }
 
-  // Навігація
+  // Навігація та бургер-меню
   nav {
-    display: flex !important;
-    align-items: center !important;
-    flex: 1 1 auto;
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .burger-menu {
+      width: fit-content;
+
+      .menu-toggle {
+        margin: 0 !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        border-radius: 6px;
+      }
+    }
 
     .main-menu {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 26px;
-      list-style: none !important;
-      margin: 0 !important;
-      padding: 0 !important;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: none;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 16px 22px;
+      justify-content: center;
+      font-weight: 700;
 
       li {
-        display: inline-block !important;
-        margin: 0 !important;
+        margin: 0;
 
         .menu-link {
-          color: var(--primary-text-color) !important;
-          text-decoration: none !important;
-          font-size: 14px;
+          text-decoration: none;
+          color: var(--primary-text-color);
+          text-transform: uppercase;
+          font-size: 13px;
           font-weight: 700;
           letter-spacing: 0.5px;
-          text-transform: uppercase;
-          white-space: nowrap !important;
+          white-space: nowrap;
           transition: color 0.2s ease;
 
-          &:hover {
-            color: var(--red-color) !important;
+          &:hover,
+          &.active-link {
+            color: var(--red-color);
           }
         }
+      }
+
+      &.show {
+        display: flex;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        width: 100%;
+        padding: 18px 20px;
+        background: #1c1c20;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        z-index: 999;
       }
     }
   }
 
   // Блок дій
   .header-actions {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
     flex-shrink: 0;
-    white-space: nowrap !important;
 
-    // Перемикач теми
+    @media (min-width: 796px) {
+      gap: 16px;
+    }
+
     .theme-toggle-btn {
       background: transparent !important;
       border: 1px solid rgba(255, 255, 255, 0.25) !important;
       border-radius: 50% !important;
-      width: 36px !important;
-      height: 36px !important;
-      min-width: 36px !important;
-      min-height: 36px !important;
+      width: 34px !important;
+      height: 34px !important;
+      min-width: 34px !important;
+      min-height: 34px !important;
       padding: 0 !important;
       margin: 0 !important;
       display: inline-flex !important;
@@ -98,8 +132,8 @@ header {
       transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 
       svg {
-        width: 18px;
-        height: 18px;
+        width: 17px;
+        height: 17px;
         display: block;
       }
 
@@ -124,42 +158,43 @@ header {
       }
     }
 
-    // Пошук
     .search-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 36px !important;
-      height: 36px !important;
-      border-radius: 50% !important;
-      color: var(--primary-text-color) !important;
-      text-decoration: none !important;
-      transition: all 0.2s ease-in-out;
+      display: none;
 
-      svg {
-        stroke: var(--primary-text-color);
-        transition: stroke 0.2s ease;
-      }
+      @media (min-width: 796px) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        color: var(--primary-text-color);
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
 
-      &:hover {
-        background: rgba(255, 59, 57, 0.1) !important;
         svg {
-          stroke: var(--red-color);
+          stroke: var(--primary-text-color);
+        }
+
+        &:hover {
+          background: rgba(255, 59, 57, 0.1);
+          svg {
+            stroke: var(--red-color);
+          }
         }
       }
     }
 
-    // Перемикач мови
     .lang-switch-box {
-      display: inline-flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      gap: 8px;
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
       cursor: pointer;
       user-select: none;
 
       .lang-label {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 700;
         color: var(--grey-color);
         transition: color 0.2s ease;
@@ -170,8 +205,8 @@ header {
       }
 
       .lang-slider {
-        width: 44px;
-        height: 24px;
+        width: 40px;
+        height: 22px;
         border-radius: 100px;
         border: 1px solid var(--primary-text-color);
         background: transparent;
@@ -182,8 +217,8 @@ header {
         box-sizing: border-box;
 
         .lang-circle {
-          width: 18px;
-          height: 18px;
+          width: 16px;
+          height: 16px;
           border-radius: 50%;
           position: absolute;
           left: 2px;
@@ -195,8 +230,41 @@ header {
 
       &.is-en {
         .lang-slider .lang-circle {
-          transform: translateX(20px);
+          transform: translateX(18px);
           background: #012169 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='s'%3E%3Cpath d='M0,0 v30 h60 v-30 z'/%3E%3C/clipPath%3E%3CclipPath id='t'%3E%3Cpath d='M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23s)'%3E%3Cpath d='M0,0 v30 h60 v-30 z' fill='%23012169'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0,0 L60,30 M60,0 L0,30' clip-path='url(%23t)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30,0 v30 M0,15 h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30,0 v30 M0,15 h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/g%3E%3C/svg%3E") center / cover no-repeat !important;
+        }
+      }
+    }
+  }
+}
+
+// Десктопна версія (min-width: 1200px)
+@media (min-width: 1200px) {
+  header {
+    padding: 24px 0;
+
+    nav {
+      flex: 1 1 auto;
+      margin-left: 0;
+      justify-content: center;
+
+      .burger-menu {
+        display: none;
+      }
+
+      .main-menu,
+      .main-menu.show {
+        display: flex;
+        position: static;
+        width: auto;
+        padding: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        gap: 26px;
+
+        li .menu-link {
+          font-size: 14px;
         }
       }
     }
@@ -209,21 +277,29 @@ header {
     filter: invert(0.9) hue-rotate(180deg);
   }
 
-  header .header-actions {
-    .theme-toggle-btn {
-      border-color: rgba(0, 0, 0, 0.25) !important;
-
-      .icon-sun {
-        display: none;
-      }
-
-      .icon-moon {
-        display: block;
-      }
+  header {
+    nav .main-menu.show {
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.12);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
     }
 
-    .lang-switch-box .lang-slider {
-      border-color: rgba(0, 0, 0, 0.5) !important;
+    .header-actions {
+      .theme-toggle-btn {
+        border-color: rgba(0, 0, 0, 0.25) !important;
+
+        .icon-sun {
+          display: none;
+        }
+
+        .icon-moon {
+          display: block;
+        }
+      }
+
+      .lang-switch-box .lang-slider {
+        border-color: rgba(0, 0, 0, 0.5) !important;
+      }
     }
   }
 }

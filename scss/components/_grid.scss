@@ -1,25 +1,26 @@
 @use "../variables/fonts" as *;
 @use "../variables/colors" as *;
 
-// Активний пункт меню
 header nav .main-menu .menu-link.active-link {
   color: var(--red-color) !important;
 }
 
-// Основний контейнер сторінки
+// Mobile-first контейнер сторінки Grid
 .grid-page-main {
-  margin: 30px 0 60px 0;
+  width: 100%;
+  margin: 24px 0 50px 0;
   display: grid;
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 24px;
 
   .grid-hero {
+    width: 100%;
     margin: 0;
-    padding-bottom: 18px;
+    padding-bottom: 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
     h1 {
       margin: 0 0 10px 0;
-      font-size: 38px;
       color: var(--primary-text-color);
     }
 
@@ -30,30 +31,41 @@ header nav .main-menu .menu-link.active-link {
   }
 }
 
-// Двоколонкова сітка
+// Сітка
 .grid-layout-wrapper {
+  width: 100%;
   display: grid;
-  grid-template-columns: 2.35fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   align-items: stretch;
+
+  @media (min-width: 796px) {
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 2.4fr 1fr;
+  }
 }
 
-// Картка основного контенту
 .grid-main-card {
+  width: 100%;
   background: #18181b;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
-  padding: 28px;
+  padding: 22px;
+
+  @media (min-width: 796px) {
+    padding: 28px;
+  }
 
   h2 {
     margin: 0 0 14px 0;
-    font-size: 26px;
   }
 
   > p {
-    margin: 0 0 28px 0;
-    line-height: 1.6;
-    font-size: 15px;
+    margin: 0 0 24px 0;
     color: var(--primary-text-color);
   }
 }
@@ -61,51 +73,55 @@ header nav .main-menu .menu-link.active-link {
 // Галерея зображень
 .gallery-block {
   h3 {
-    margin: 0 0 18px 0;
-    font-size: 20px;
+    margin: 0 0 16px 0;
   }
 
   .grid-gallery {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 796px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
 
     .gallery-card {
+      width: 100%;
       margin: 0;
       background: #222226;
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 14px;
-      padding: 20px;
+      padding: 18px;
       display: grid;
-      grid-template-rows: 130px auto;
-      gap: 14px;
+      grid-template-rows: 120px auto;
+      gap: 12px;
       place-items: center;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease;
 
       &:hover {
         transform: translateY(-3px);
         border-color: var(--red-color);
-        box-shadow: 0 8px 20px rgba(255, 59, 57, 0.12);
       }
 
       .card-media {
         width: 100%;
-        height: 130px;
+        height: 120px;
         display: grid;
         place-items: center;
 
         img {
+          width: auto;
           max-width: 90%;
-          max-height: 120px;
+          max-height: 110px;
           object-fit: contain;
           display: block;
           border-radius: 8px;
-          transition: filter 0.25s ease;
         }
       }
 
       figcaption {
-        font-size: 14px;
         font-weight: 700;
         color: var(--primary-text-color);
         text-align: center;
@@ -114,12 +130,12 @@ header nav .main-menu .menu-link.active-link {
   }
 }
 
-// Бічна панель
 .grid-sidebar-card {
+  width: 100%;
   background: #18181b;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
-  padding: 24px;
+  padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -127,19 +143,16 @@ header nav .main-menu .menu-link.active-link {
 
   .sidebar-top {
     display: grid;
-    gap: 16px;
+    gap: 14px;
   }
 
   h3 {
     margin: 0;
-    font-size: 20px;
     color: var(--primary-text-color);
   }
 
-  > p {
-    margin: -8px 0 0 0;
-    font-size: 13px;
-    line-height: 1.5;
+  p {
+    margin: 0;
     color: var(--silver-color);
   }
 
@@ -152,12 +165,11 @@ header nav .main-menu .menu-link.active-link {
 
     li a {
       display: block;
-      padding: 11px 14px;
+      padding: 10px 14px;
       border-radius: 10px;
       background: rgba(255, 255, 255, 0.04);
       color: var(--primary-text-color);
       text-decoration: none;
-      font-size: 13px;
       font-weight: 600;
       transition: all 0.2s ease;
 
@@ -180,14 +192,12 @@ header nav .main-menu .menu-link.active-link {
     .badge-title {
       display: block;
       font-weight: 700;
-      font-size: 15px;
       color: var(--red-color);
       margin-bottom: 4px;
     }
 
     p {
       margin: 0;
-      font-size: 12px;
       color: var(--primary-text-color);
     }
   }
@@ -220,29 +230,12 @@ header nav .main-menu .menu-link.active-link {
   }
 
   .grid-sidebar-card {
-    > p {
+    p {
       color: #555555;
     }
 
     .sidebar-links li a {
       background: #f4f5f7;
-
-      &:hover {
-        background: rgba(230, 53, 51, 0.1);
-      }
     }
-  }
-}
-
-// Адаптивність
-@media (max-width: 860px) {
-  .grid-layout-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  .gallery-block .grid-gallery {
-    grid-template-columns: 1fr;
   }
 }

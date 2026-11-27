@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Бургер-меню (перемикання класу show)
+    const burgerBtn = document.getElementById('burger-btn');
+    const mainMenu = document.getElementById('main-menu');
+
+    if (burgerBtn && mainMenu) {
+        burgerBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('show');
+        });
+
+        mainMenu.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mainMenu.classList.remove('show');
+            });
+        });
+    }
+
     // Тема оформлення (синхронізація між сторінками в межах сесії)
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
@@ -19,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Словник перекладу
     const translations = {
         uk: {
+            menu_btn: "Меню",
             nav_specialties: "СПЕЦІАЛЬНОСТІ",
             nav_curriculum: "ОСВІТНЯ ПРОГРАМА",
             nav_science: "НАУКА",
@@ -107,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footer_addr: "61070, Харківська область, Харків, вул. Вадима Манька, 17<br>НАУ ім. М.Є. Жуковського \"ХАІ\"<br>Кафедра інформаційно-комунікаційних технологій №504"
         },
         en: {
+            menu_btn: "Menu",
             nav_specialties: "SPECIALTIES",
             nav_curriculum: "CURRICULUM",
             nav_science: "SCIENCE",
